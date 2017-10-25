@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2'
 # devise dependencies
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'nokogiri'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

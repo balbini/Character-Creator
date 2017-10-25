@@ -1,0 +1,22 @@
+
+
+<% classes = "http://dnd5eapi.co.api/classes"; %>
+
+<% puts classes %>
+
+
+<%= form_for @character do |c| %>
+  <div class="character_info">
+    <span><p>Character Name</p>
+    <%= c.text_field :name, placeholder:'Name' %>
+    <p>Character Age</p>
+    <%= c.number_field :age, placeholder:'Age'%>
+    <p>Character Level</p>
+    <%= c.number_field :level, min: 1, max: 20, placeholder: '1' %>
+    <p>Experience</p>
+    <%= c.number_field :xp, placeholder: '2500'%>
+  </span>
+  </div>
+  <br>
+  <%= c.submit "Save Character" %>
+<% end %>
