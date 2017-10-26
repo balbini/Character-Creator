@@ -1,0 +1,13 @@
+<h1>Your Characters</h1>
+<hr>
+<% if (current_user.id != nil) %>
+  <% @characters.each do |c| %>
+    <p>Name: <%= c.name %></p>
+    <p>Age: <%= c.age %></p>
+    <p>Level: <%= c.level %></p>
+    <p>Experience: <%= c.xp %></p>
+    <p>Class: <%= c.class %></p>
+    <p>Character Story: <%= c.description %></p>
+    <hr>
+  <% end %>
+<% end %>
