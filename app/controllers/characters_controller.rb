@@ -38,7 +38,7 @@ class CharactersController < ApplicationController
     if user_check
       @character = Character.find_by_id(params[:id])
       @character.destroy
-      redirect_to root_path
+      redirect_to(root_path)
     else
       flash[:error] = "Cannot delete other characters"
       redirect_to root_path

@@ -1,16 +1,20 @@
 <% content_for :top_content do %>
   <div class="jumbotron">
     <div class="container">
-      <h1>Welcome!</h1>
-      <p>Register to get started.</p>
+      <h1>Create An Adventurer</h1>
+      <p>Sign up to get started.</p>
       <p>
-        <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
+        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
       </p>
     </div>
   </div>
 <% end %>
 <% if current_user != nil %>
   <div class="newCharacter">
-    <button><%= link_to 'Create a New Character', new_character_path %></button>
+    <%= link_to 'Create a New Character', new_character_path %>
   </div>
+  <br>
+  <div class="allCharacters">
+    <%= link_to 'All Characters',
+    characters_path %>
 <% end %>
