@@ -13,15 +13,15 @@
     <%= c.text_area(:description, placeholder: 'Give your character a story', maxlength: 1000) %>
     <p>Choose Your Character's Race</p>
     <% @race_options.each do |r| %>
-      <input type="radio"><%= r["name"] %></input>
-      <% end %>
+      <%= c.radio_button('race', r["name"]) %> <%= r["name"] %>
+    <% end %>
       <p>Choose A SubRace for Your Character</p>
       <% @subrace_options.each do |s| %>
         <button><%= s["name"] %></button>
         <% end %>
     <p>Choose a Class for Your Character</p>
     <% @character_classes.each do |d| %>
-      <%=d["name"]%> <%= c.radio_button('class', d["name"])%>
+       <%= c.radio_button('class_name', d["name"])%> <%=d["name"]%>
     <% end %>
     <p>Character Image</p>
     <%= c.file_field :image %>

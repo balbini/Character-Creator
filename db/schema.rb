@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20171026192240) do
     t.integer "charisma"
     t.string "languages"
     t.string "subrace"
-    t.string "class"
+    t.string "class_name"
   end
 
   create_table "users", force: :cascade do |t|
