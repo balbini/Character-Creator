@@ -12,23 +12,21 @@
     <p>Character Description</p>
     <%= c.text_area(:description, placeholder: 'Give your character a story', maxlength: 1000) %>
     <p>Choose Your Character's Race</p>
-    <select><%= @chosen_race.each do |r| %>
-      <option><%= r["name"] %></option>
-      <% end %></select>
+    <% @race_options.each do |r| %>
+      <input type="radio"><%= r["name"] %></input>
+      <% end %>
       <p>Choose A SubRace for Your Character</p>
-      <select><%= @chosen_subrace.each do |s| %>
-        <option><%= s["name"] %></option>
-        <% end %></select>
+      <% @subrace_options.each do |s| %>
+        <button><%= s["name"] %></button>
+        <% end %>
     <p>Choose a Class for Your Character</p>
-    <select><%= @character_classes.each do |d| %>
-      <option><%= d["name"] %></option>
-      <!-- <option><p><%= d["url"] %></p></option> -->
-    <% end %></select>
+    <% @character_classes.each do |d| %>
+      <%=d["name"]%> <%= c.radio_button('class', d["name"])%>
+    <% end %>
     <p>Character Image</p>
     <%= c.file_field :image %>
 
-    <!-- <p><%= @player_class_index %></p>
-    <p><%= @unique_class %></p> -->
+
 
 
   </div>

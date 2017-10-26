@@ -16,9 +16,9 @@ class CharactersController < ApplicationController
      @player_class = JSON.parse(@player_class)["index"]
      @player_class_index = @player_class.to_s
      @player_race = open("http://www.dnd5eapi.co/api/races").read
-     @chosen_race = JSON.parse(@player_race)["results"]
+     @race_options = JSON.parse(@player_race)["results"]
      @player_subrace = open("http://www.dnd5eapi.co/api/subraces").read
-     @chosen_subrace = JSON.parse(@player_subrace)["results"]
+     @subrace_options = JSON.parse(@player_subrace)["results"]
   end
 
   def create
@@ -31,7 +31,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @characters = Character.find_by_id(params[:id])
+    @character = Character.find_by_id(params[:id])
   end
 
   def destroy

@@ -1,3 +1,15 @@
 <div>
-  Show page is working, now format it!
+
+<hr>
+  <% if (current_user.id === @character.user_id) %>
+      <p>Name: <%= @character.name %></p>
+      <p>Age: <%= @character.age %></p>
+      <p>Level: <%= @character.level %></p>
+      <p>Experience: <%= @character.xp %></p>
+      <p>Class: <%= @character.class %></p>
+      <p>Character Story: <%= @character.description %></p>
+
+    <% end %>
+
+
 </div>

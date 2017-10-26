@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026173359) do
+ActiveRecord::Schema.define(version: 20171026192240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20171026173359) do
     t.integer "charisma"
     t.string "languages"
     t.string "subrace"
+    t.string "class"
   end
 
   create_table "users", force: :cascade do |t|
