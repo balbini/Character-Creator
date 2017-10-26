@@ -28,6 +28,10 @@ class CharactersController < ApplicationController
     end
   end
 
+  def show
+    @characters = Character.find_by_id(params[:id])
+  end
+
   def destroy
     if user_check
       @character = Character.find_by_id(params[:id])

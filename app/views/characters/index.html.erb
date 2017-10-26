@@ -8,6 +8,8 @@
     <p>Experience: <%= c.xp %></p>
     <p>Class: <%= c.class %></p>
     <p>Character Story: <%= c.description %></p>
-    <hr>
+    <%=link_to "Character Details", character_path(c.id) %>
+      <hr>
   <% end %>
+
 <% end %>
