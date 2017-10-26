@@ -1,7 +1,8 @@
 <h1>Your Characters</h1>
 <hr>
-<% if (current_user.id != nil) %>
+
   <% @characters.each do |c| %>
+  <% if (current_user.id === c.user_id) %>
     <p>Name: <%= c.name %></p>
     <p>Age: <%= c.age %></p>
     <p>Level: <%= c.level %></p>

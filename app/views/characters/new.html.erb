@@ -15,6 +15,10 @@
     <select><%= @chosen_race.each do |r| %>
       <option><%= r["name"] %></option>
       <% end %></select>
+      <p>Choose A SubRace for Your Character</p>
+      <select><%= @chosen_subrace.each do |s| %>
+        <option><%= s["name"] %></option>
+        <% end %></select>
     <p>Choose a Class for Your Character</p>
     <select><%= @character_classes.each do |d| %>
       <option><%= d["name"] %></option>
