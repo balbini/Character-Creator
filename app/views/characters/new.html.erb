@@ -28,10 +28,14 @@
        <%= c.radio_button('class_name', d["name"])%> <%=d["name"]%>
     <% end %>
     <p>Choose an Alignment, create a loop here<p>
+    <button id="roller">Roll for Strength</button>
+    <p id="rollResult">Strength Score:</p>
+
+
 
 
     <p>Character Image</p>
-    <%= c.file_field :image %>
+    <%= c.text_field :image, placeholder: "Insert a URL" %>
 
 
 
