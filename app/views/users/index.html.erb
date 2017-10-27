@@ -1,7 +1,10 @@
 <% content_for :top_content do %>
   <div class="jumbotron">
-    <img class="forest_background" src="https://steamuserimages-a.akamaihd.net/ugc/548683405726546870/9D361A9CE499D864C8699604143224FD87E4EFB9/">
+
     <div class="container">
+      <figure>
+      <img class="forest_background" src="https://steamuserimages-a.akamaihd.net/ugc/548683405726546870/9D361A9CE499D864C8699604143224FD87E4EFB9/">
+    <figcaption>
       <h1 class="app_title">Create An Adventurer</h1>
       <% if current_user === nil %>
       <p>Sign up to get started.</p>
@@ -9,18 +12,22 @@
         <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
       </p>
       <% end %>
+      <div class="current-user-true">
+      <% if current_user != nil %>
+        <div class="newCharacter">
+          <%= link_to 'Create a New Character', new_character_path, class: 'newCharacter' %>
+        </div>
+        <br>
+        <div class="allCharacters">
+          <%= link_to 'All Characters',
+          characters_path, class: 'allCharacters' %>
+      <% end %>
+      </div>
+    </figcaption>
+    </figure>
     </div>
   </div>
 <% end %>
-<div class="current-user-true">
-<% if current_user != nil %>
-  <div class="newCharacter">
-    <%= link_to 'Create a New Character', new_character_path %>
-  </div>
-  <br>
-  <div class="allCharacters">
-    <%= link_to 'All Characters',
-    characters_path %>
-<% end %>
+
 
 </div>

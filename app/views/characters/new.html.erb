@@ -27,9 +27,14 @@
     <% @character_classes.each do |d| %>
        <%= c.radio_button('class_name', d["name"])%> <%=d["name"]%>
     <% end %>
-    <p>Choose an Alignment, create a loop here<p>
+    <p>Choose an Alignment</p>
+      <% @alignment.each do |i| %>
+        <%= c.radio_button('alignment', i)%> <%=i%>
+      <% end %>
+      <br />
     <button id="roller">Roll for Strength</button>
     <p id="rollResult">Strength Score:</p>
+    <% @character.strength%>
 
 
 

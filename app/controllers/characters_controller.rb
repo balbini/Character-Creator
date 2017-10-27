@@ -78,7 +78,7 @@ end
   private
 
   def character_params
-    params.require(:character).permit(:id, :name, :age, :level, :xp, :user_id, :description, :race, :class_name)
+    params.require(:character).permit(:id, :name, :age, :level, :xp, :user_id, :description, :race, :class_name, :alignment, :image, :strength)
   end
 
 end

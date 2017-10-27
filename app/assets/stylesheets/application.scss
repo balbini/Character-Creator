@@ -43,6 +43,23 @@
    width: 33vw;
    margin: 0 auto;
  }
-html {
+figure {
+  position: relative;
 
+  img {
+    display:block;
+    outline: solid #000 1px;
+  }
+}
+figcaption {
+  position: absolute;
+  text-align: center;
+  top: 20%;
+  right: 40%;
+  margin: 0;
+}
+
+h1, p, .allCharacters, .newCharacter {
+  color: white;
+  background: transparent;
 }
