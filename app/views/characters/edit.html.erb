@@ -1,0 +1,20 @@
+<div class="container">
+  <%= form_for @character do |c| %>
+    <div>
+      Name:<%= c.text_field :name %>
+    </div>
+    <div>
+      Age:<%= c.number_field :age %>
+    </div>
+    <div>
+      Level:<%= c.number_field :level %>
+    </div>
+    <div>
+      Experience:<%= c.number_field :xp %>
+    </div>
+    <div>
+      Description:<%=c.text_area :description %>
+    </div>
+    <%= button_to 'Save Changes', {action:"update", id:@character.id}, method: :put %>
+  <% end %>
+</div>

@@ -17,12 +17,19 @@
     <% end %>
       <p>Choose A SubRace for Your Character</p>
       <% @subrace_options.each do |s| %>
-        <button><%= s["name"] %></button>
+        <%= c.radio_button('subrace', s["name"])%><%= s["name"] %>
+        <% end %>
+      <p>Skill List</p>
+        <% @player_skills.each do |k| %>
+          <p><%= k["name"] %><p>
         <% end %>
     <p>Choose a Class for Your Character</p>
     <% @character_classes.each do |d| %>
        <%= c.radio_button('class_name', d["name"])%> <%=d["name"]%>
     <% end %>
+    <p>Choose an Alignment, create a loop here<p>
+
+
     <p>Character Image</p>
     <%= c.file_field :image %>
 

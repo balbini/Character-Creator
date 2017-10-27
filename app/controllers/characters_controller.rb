@@ -19,6 +19,9 @@ class CharactersController < ApplicationController
      @race_options = JSON.parse(@player_race)["results"]
      @player_subrace = open("http://www.dnd5eapi.co/api/subraces").read
      @subrace_options = JSON.parse(@player_subrace)["results"]
+     @all_skills = open("http://www.dnd5eapi.co/api/skills").read
+     @player_skills = JSON.parse(@all_skills)["results"]
+     @alignment = ["Lawful Good", "Choatic Good", "Neutral Good", "Neutral", "Neutral Evil", "Choatic Evil", "Lawful Evil"]
   end
 
   def create
@@ -32,6 +35,25 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find_by_id(params[:id])
+  end
+
+  def edit
+    if user_check
+      @character = Character.find_by_id(params[:id])
+    else
+      flash[:notice] = "Cannot edit other characters"
+    end
+  end
+
+  def update
+    if user_check
+      @character = Character.find_by_id(params[:id])
+      @character.update(character_params)
+      redirect_to character_path
+    else
+      flash[:error] = "Cannot edit other characters"
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def destroy
@@ -56,7 +78,7 @@ end
   private
 
   def character_params
-    params.require(:character).permit(:name, :age, :level, :xp, :user_id, :description, :race, :class_name)
+    params.require(:character).permit(:id, :name, :age, :level, :xp, :user_id, :description, :race, :class_name)
   end
 
 end
