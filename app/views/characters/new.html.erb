@@ -7,8 +7,8 @@
     <%= c.number_field :age, placeholder:'Age', min: 15%>
     <p>Character Level</p>
     <%= c.number_field :level, min: 1, max: 20, placeholder: '1' %>
-    <p>Experience</p>
-    <%= c.number_field :xp, placeholder: '2500', min: 1%>
+    <p>Experience Points</p>
+    <%= c.number_field :xp, placeholder: '2500', min: 1%> setup auto values per level
     <p>Character Description</p>
     <%= c.text_area(:description, placeholder: 'Give your character a story', maxlength: 1000) %>
     <p>Choose Your Character's Race</p>
@@ -33,18 +33,11 @@
       <% end %>
       <br />
     <button id="roller">Roll for Strength</button>
-    <p id="rollResult">Strength Score:</p>
-    <% @character.strength%>
-
-
-
-
+    <p>Strength Score:<p id="rollResult"></p></p>
+    <%= hidden_field(:character, :strength) %>
+    <p><% c.text_area :strength, placeholder: 'wooo' %></p>
     <p>Character Image</p>
     <%= c.text_field :image, placeholder: "Insert a URL" %>
-
-
-
-
   </div>
   <%= hidden_field(:character, :user_id, :value => current_user.id) %>
   <br>

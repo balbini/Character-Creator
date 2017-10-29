@@ -22,6 +22,8 @@ class CharactersController < ApplicationController
      @all_skills = open("http://www.dnd5eapi.co/api/skills").read
      @player_skills = JSON.parse(@all_skills)["results"]
      @alignment = ["Lawful Good", "Choatic Good", "Neutral Good", "Neutral", "Neutral Evil", "Choatic Evil", "Lawful Evil"]
+     @barbarian_proficiencies = open("http://www.dnd5eapi.co/api/classes/1").read
+     @chosen_barbarian = JSON.parse(@barbarian_proficiencies)["proficiencies"]
   end
 
   def create
