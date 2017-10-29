@@ -1,3 +1,11 @@
-<div>
-  The route is working
+<div class="party_form">
+  <%= form_for @party do |party| %>
+    <p> Party Name </p>
+    <%= party.text_field :name, placeholder:'Fellowship of the Ring' %>
+    <p> Party Members </p>
+      <%= party.text_field :party_members, placeholder: 'Enter the members of your party' %>
+      <%= hidden_field(:party, :user_id, :value => current_user.id) %>
+      <br>
+      <button type="submit"><%='Begin Your Adventure' %></button>
+  <% end %>
 </div>

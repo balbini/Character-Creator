@@ -1,0 +1,10 @@
+<h1>Your Parties</h1>
+<hr>
+
+  <% @parties.each do |c| %>
+  <% if (current_user.id === c.user_id) %>
+    <p>Party Name: <%= c.name %></p>
+    <p>Party Members: <%= c.party_members %></p>
+  <% end %>
+
+<% end %>
