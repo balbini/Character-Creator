@@ -5,6 +5,7 @@
   <% if (current_user.id === c.user_id) %>
     <p>Party Name: <%= c.name %></p>
     <p>Party Members: <%= c.party_members %></p>
+      <%=link_to "Party Details", party_path(c.id) %>
   <% end %>
-
+  <hr>
 <% end %>

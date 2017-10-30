@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171029172540) do
+ActiveRecord::Schema.define(version: 20171030201836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "AddCharactertoParty", force: :cascade do |t|
+    t.integer "party_id"
+  end
 
   create_table "character_classes", force: :cascade do |t|
     t.string "name"
@@ -61,6 +65,7 @@ ActiveRecord::Schema.define(version: 20171029172540) do
     t.string "languages"
     t.string "subrace"
     t.string "class_name"
+    t.integer "party_id"
   end
 
   create_table "parties", force: :cascade do |t|

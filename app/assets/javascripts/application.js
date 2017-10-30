@@ -11,9 +11,13 @@
 // about supported directives.
 //
 
+//= require rails-ujs
 //= require jquery3
-//= require jquery_ujs
-//= require_tree .
+// = require_tree .
+//= require materialize
+//= require materialize-sprockets
+
+
 $(document).ready(function(){
 
   $('#race').on('load', showSubRace);

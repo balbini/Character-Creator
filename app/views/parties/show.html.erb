@@ -1,0 +1,8 @@
+<h1><%=@party.name%></h1>
+
+<p>Party Members: <%=@party.party_members %></p>
+<p>Party Roles: </p>
+<p>Join Id: <%= @party.id %>
+  <%= button_to "Edit Party", {action:"edit", id: @party.id}, method: :get %>
+  <br />
+  <%= button_to "Delete Party", {action:"destroy", id: @party.id}, method: :delete, data: { confirm: "Is the adventure over?"} %>

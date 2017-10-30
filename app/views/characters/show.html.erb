@@ -34,7 +34,7 @@
       <p>Alignment: <%= @character.alignment %></p>
       <p>Character Story: <%= @character.description %></p>
       <p>Strength Score: <%= @character.strength %>
-      <img src="<%= @character.image %>" />
+      <img class="character-image" src="<%= @character.image %>" />
     <% end %>
 <%= button_to "Edit Character", {action:"edit", id: @character.id}, method: :get %>
 <br />

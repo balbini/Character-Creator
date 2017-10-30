@@ -13,7 +13,18 @@
       Experience:<%= c.number_field :xp %>
     </div>
     <div>
+      Class:<% @character_classes.each do |d| %>
+         <%= c.radio_button('class_name', d["name"])%> <%=d["name"]%>
+      <% end %>
+    </div>
+    <div>
       Description:<%=c.text_area :description %>
+    </div>
+    <div>
+      Party Role:<%= c.text_field :party_role %>
+    </div>
+    <div>
+      Party Id:<%= c.text_field :party_id%>
     </div>
     <%= button_to 'Save Changes', {action:"update", id:@character.id}, method: :put %>
   <% end %>

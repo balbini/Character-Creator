@@ -45,6 +45,8 @@ class CharactersController < ApplicationController
     else
       flash[:notice] = "Cannot edit other characters"
     end
+    @character_classes = open("http://www.dnd5eapi.co/api/classes").read
+    @character_classes = JSON.parse(@character_classes)["results"]
   end
 
   def update
@@ -71,7 +73,7 @@ class CharactersController < ApplicationController
 
   def user_check
     @character = Character.find_by_id(params[:id])
-    if current_user.id == @character.user_id
+    if current_user.id === @character.user_id
       true
     else
       false
@@ -80,7 +82,7 @@ end
   private
 
   def character_params
-    params.require(:character).permit(:id, :name, :age, :level, :xp, :user_id, :description, :race, :class_name, :alignment, :image, :strength)
+    params.require(:character).permit(:id, :name, :age, :level, :xp, :user_id, :description, :race, :class_name, :alignment, :image, :strength, :subrace)
   end
 
 end

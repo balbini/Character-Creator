@@ -1,6 +1,9 @@
 @import "bourbon";
 @import "base/base";
 @import "neat";
+@import 'materialize';
+@import "materialize/components/color";
+@import "materialize/extras/nouislider";
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -15,15 +18,19 @@
  * It is generally better to create a new file per style scope.
   *= require_self
  */
+ //=require materialize-sprockets
+ //= require materialize/extras/nouislider
 
- .forest_background {
-   min-width: 100vw;
-   min-height: auto;
-   z-index: -10;
- }
+ // body {
+ //   background: url("https://steamuserimages-a.akamaihd.net/ugc/548683405726546870/9D361A9CE499D864C8699604143224FD87E4EFB9/");
+ // }
 
- .app-title {
-   font-family: fantasy;
+ .home-page {
+  display:inline-block;
+   position: absolute;
+   margin: 0 auto;
+   align: center;
+   color: white;
  }
  .container {
    text-align: center
@@ -43,24 +50,8 @@
    width: 33vw;
    margin: 0 auto;
  }
-figure {
-  position: relative;
-
-  img {
-    display:block;
-    outline: solid #000 1px;
-  }
-}
-figcaption {
-  position: absolute;
-  text-align: center;
-  top: 20%;
-  right: 40%;
-  margin: 0;
-}
 
 h1, .allCharacters, .newCharacter {
-  color: white;
   background: transparent;
 }
 .character_info {
@@ -68,84 +59,9 @@ h1, .allCharacters, .newCharacter {
   width: 50vw;
   margin: 0 auto;
 }
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.character-image {
+  width: 33vw;
 }
-.card {
-  $base-border-color: gainsboro !default;
-  $base-border-radius: 3px !default;
-  $base-background-color: white !default;
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $base-font-color: $dark-gray !default;
-  $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-background: lighten($card-border-color, 10%);
-  $card-header-background: $card-background;
-  $card-margin: 1em;
-  $card-image-hover-opacity: 0.7;
-  $card-image-hover-color: #F8F2B4;
-
-  background-color: $card-background;
-  border: $card-border;
-  border-radius: $base-border-radius;
-  box-shadow: 0 2px 4px darken($base-background-color, 10%);
-  cursor: pointer;
-  flex-basis: 15em;
-  flex-grow: 1;
-  margin: 0 $card-margin $base-spacing $card-margin;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-
-  .card-image {
-    background-color: $card-image-hover-color;
-    height: 150px;
-    max-height: 150px;
-    overflow: hidden;
-
-    img {
-      @include border-top-radius($base-border-radius);
-      opacity: 1;
-      transition: all 0.2s ease-in-out;
-      width: 100%;
-    }
-  }
-  .card-header {
-    background-color: $card-header-background;
-    border-bottom: $card-border;
-    border-radius: $base-border-radius $base-border-radius 0 0;
-    font-weight: bold;
-    line-height: 1.5em;
-    padding: ($base-spacing / 3) ($base-spacing / 2);
-    transition: all 0.2s ease-in-out;
-  }
-  .card-copy {
-    font-size: 0.9em;
-    line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
-
-    p {
-      margin: 0 0 ($base-spacing / 2);
-    }
-  }
-
-  &:focus,
-  &:hover {
-    cursor: pointer;
-
-    img {
-      opacity: $card-image-hover-opacity;
-    }
-}
-
-&:active {
-  background-color: $card-background;
-
-  .card-header {
-    background-color: $card-background;
-  }
-}
+#sidenav-overlay{
+  z-index: 996
 }

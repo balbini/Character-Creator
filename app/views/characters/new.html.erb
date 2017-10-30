@@ -2,27 +2,20 @@
 <%= form_for @character do |c| %>
   <div class="character_info">
     <p>Character Name</p>
-    <%= c.text_field :name, placeholder:'Name' %>
+    <%= c.text_field :name, placeholder:'Name', required: true %>
     <p>Character Age</p>
-    <%= c.number_field :age, placeholder:'Age', min: 15%>
+    <%= c.number_field :age, placeholder:'Age', min: 15, required: true%>
     <p>Character Level</p>
-    <%= c.number_field :level, min: 1, max: 20, placeholder: '1' %>
+    <%= c.number_field :level, min: 1, max: 20, placeholder: '1', required: true %>
     <p>Experience Points</p>
-    <%= c.number_field :xp, placeholder: '2500', min: 1%> setup auto values per level
+    <%= c.number_field :xp, placeholder: '2500', min: 1, required: true%> setup auto values per level
     <p>Character Description</p>
     <%= c.text_area(:description, placeholder: 'Give your character a story', maxlength: 1000) %>
     <p>Choose Your Character's Race</p>
     <% @race_options.each do |r| %>
       <%= c.radio_button('race', r["name"]) %> <%= r["name"] %>
     <% end %>
-      <p>Choose A SubRace for Your Character</p>
-      <% @subrace_options.each do |s| %>
-        <%= c.radio_button('subrace', s["name"])%><%= s["name"] %>
-        <% end %>
-      <p>Skill List</p>
-        <% @player_skills.each do |k| %>
-          <p><%= k["name"] %><p>
-        <% end %>
+
     <p>Choose a Class for Your Character</p>
     <% @character_classes.each do |d| %>
        <%= c.radio_button('class_name', d["name"])%> <%=d["name"]%>
@@ -32,14 +25,11 @@
         <%= c.radio_button('alignment', i)%> <%=i%>
       <% end %>
       <br />
-    <button id="roller">Roll for Strength</button>
-    <p>Strength Score:<p id="rollResult"></p></p>
-    <%= hidden_field(:character, :strength) %>
-    <p><% c.text_area :strength, placeholder: 'wooo' %></p>
     <p>Character Image</p>
     <%= c.text_field :image, placeholder: "Insert a URL" %>
+    <%= hidden_field(:character, :user_id, :value => current_user.id) %>
+    <br>
+    <button type="submit"><%='Save Character' %></button>
   </div>
-  <%= hidden_field(:character, :user_id, :value => current_user.id) %>
-  <br>
-  <button type="submit"><%='Save Character' %></button>
+
 <% end %>
