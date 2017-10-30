@@ -2,7 +2,7 @@
 <hr>
 <div class="row">
 <% @characters.each do |c| %>
-  <div class="col s12 m6 l3">
+  <div class="col s12 m6">
     <div class="card">
       <% if (current_user.id === c.user_id) %>
         <div class="card-image">
