@@ -17,11 +17,11 @@ class CharactersController < ApplicationController
      @player_class_index = @player_class.to_s
      @player_race = open("http://www.dnd5eapi.co/api/races").read
      @race_options = JSON.parse(@player_race)["results"]
-     @player_subrace = open("http://www.dnd5eapi.co/api/subraces").read
-     @subrace_options = JSON.parse(@player_subrace)["results"]
+     @player_subrace = ["Human", "Wood Elf", "High Elf", "Mountain Dwarf", "Hill Dwarf", "Dragonborn", "Half-Orc", "Forest Gnome", "Rock Gnome", "Tiefling", "Stout Halfling", "Lightfoot Halfling","Drow", "Half-Elf"]
+    #  @subrace_options = JSON.parse(@player_subrace)["results"]
      @all_skills = open("http://www.dnd5eapi.co/api/skills").read
      @player_skills = JSON.parse(@all_skills)["results"]
-     @alignment = ["Lawful Good", "Choatic Good", "Neutral Good", "Neutral", "Neutral Evil", "Choatic Evil", "Lawful Evil"]
+     @alignment = ["Lawful Good", "Choatic Good", "Neutral Good", "Neutral", "Choatic Neutral", "Neutral Evil", "Choatic Evil", "Lawful Evil"]
      @barbarian_proficiencies = open("http://www.dnd5eapi.co/api/classes/1").read
      @chosen_barbarian = JSON.parse(@barbarian_proficiencies)["proficiencies"]
   end

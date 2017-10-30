@@ -13,11 +13,6 @@
       Experience:<%= c.number_field :xp %>
     </div>
     <div>
-      Class:<% @character_classes.each do |d| %>
-         <%= c.radio_button('class_name', d["name"])%> <%=d["name"]%>
-      <% end %>
-    </div>
-    <div>
       Description:<%=c.text_area :description %>
     </div>
     <div>

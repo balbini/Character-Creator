@@ -1,23 +1,27 @@
 <h1>Your Characters</h1>
 <hr>
+<div class="row">
 <% @characters.each do |c| %>
-  <div class="cards">
+  <div class="col s12 m6 l3">
     <div class="card">
       <% if (current_user.id === c.user_id) %>
         <div class="card-image">
           <img src="<%= c.image %>">
         </div>
-      <div class="card-header">
-        <p>Name: <%= c.name %></p>
-      </div>
-      <div class="card-copy">
-        <p>Age: <%= c.age %></p>
-        <p>Level: <%= c.level %></p>
-        <p>Experience: <%= c.xp %></p>
-        <p>Class: <%= c.class_name %></p>
+      <span class="card-title">
+        <p><%= c.name %></p>
+      </span>
+        <div class="card-content">
+          <p>Age: <%= c.age %></p>
+          <p>Level: <%= c.level %></p>
+          <p>Experience: <%= c.xp %></p>
+          <p>Class: <%= c.class_name %></p>
+        </div>
+      <div class="card-action">
         <%=link_to "Character Details", character_path(c.id) %>
         <% end %>
       </div>
     </div>
   </div>
 <% end %>
+</div>
