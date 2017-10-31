@@ -11,9 +11,8 @@
       <%= r.party_role %>,
     <% end %>
   </p>
-  <p>Missing Roles:
-
   <p>Join Id: <%= @party.id %></p>
+  <p><strong>Give this Join Id to the players in your party, they will need to enter it in on their character edit page</strong></p>
 
   <%= button_to "Edit Party", {action:"edit", id: @party.id}, method: :get, class:'btn' %>
     <br />
