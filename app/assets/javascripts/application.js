@@ -20,18 +20,8 @@
 
 $(document).ready(function(){
 
-  $('#race').on('load', showSubRace);
+  $('.carousel').carousel();
 
-  function showSubRace() {
-    var race =  data.race;
-    console.log(race);
-  }
-  $("#roller").on('click', function(e){
-    e.preventDefault();
-    var randomNumber = Math.floor(Math.random(3) * 18) + 2;
-    // alert(randomNumber);
-    $("#rollResult").append(randomNumber);
-    $("#roller").prop('disabled', true);
-  })
+  $('.carousel.carousel-slider').carousel();
 
 })

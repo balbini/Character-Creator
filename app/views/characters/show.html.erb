@@ -23,8 +23,9 @@
 
       <p>Experience: <%= @character.xp %></p>
       <p>Class: <%= @character.class_name %></p>
+      <!-- use erb to make it display better -->
         <% if @character.class_name === "Barbarian" %>
-          <p>Class Feature:<%= @chosen_barbarian %></p>
+          <p>Class Feature:<%= @chosen_barbarian.join(" ") %></p>
         <% end %>
         <% if @character.class_name === "Cleric" %>
           <p>Class Feature:<%= @chosen_cleric %></p>
@@ -34,6 +35,30 @@
         <% end %>
         <% if @character.class_name === "Druid" %>
           <p>Class Feature:<%= @chosen_druid %></p>
+        <% end %>
+        <% if @character.class_name === "Fighter" %>
+          <p>Class Feature:<%= @chosen_fighter %></p>
+        <% end %>
+        <% if @character.class_name === "Monk" %>
+          <p>Class Feature:<%= @chosen_monk.join("") %></p>
+        <% end %>
+        <% if @character.class_name === "Paladin" %>
+          <p>Class Feature:<%= @chosen_paladin %></p>
+        <% end %>
+        <% if @character.class_name === "Ranger" %>
+          <p>Class Feature:<%= @chosen_ranger %></p>
+        <% end %>
+        <% if @character.class_name === "Rogue" %>
+          <p>Class Feature:<%= @chosen_rouge %></p>
+        <% end %>
+        <% if @character.class_name === "Sorcerer" %>
+          <p>Class Feature:<%= @chosen_sorcerer %></p>
+        <% end %>
+        <% if @character.class_name === "Warlock" %>
+          <p>Class Feature:<%= @chosen_warlock %></p>
+        <% end %>
+        <% if @character.class_name === "Wizard" %>
+          <p>Class Feature:<%= @chosen_wizard %></p>
         <% end %>
 
       <p>Alignment: <%= @character.alignment %></p>
