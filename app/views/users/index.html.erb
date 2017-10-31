@@ -1,8 +1,10 @@
 <% content_for :top_content do %>
   <div class="header-test">
-      <h1 class="app_title">Let The Adventure Begin</h1>
+
       <div class="homepage">
+
         <% if current_user === nil %>
+        <h1 class="app_title">Up For a New Adventure?</h1>
           <p>Sign up to get started.</p>
           <span>
             <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg red darken-2' %>
@@ -13,6 +15,7 @@
         <% end %>
       </div>
       <% if current_user != nil %>
+      <h1 class="app_title">Let The Adventure Begin</h1>
         <div class="current-user-true">
           <div class="carousel">
             <a class = "carousel-item" href="#one!">

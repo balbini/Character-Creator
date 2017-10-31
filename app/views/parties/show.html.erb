@@ -1,16 +1,18 @@
-<h1><%=@party.name%></h1>
-<p>Party Members:
-  <%@party.characters.each do |i| %>
-    <%= i.name %>,
-  <% end %>
-</p>
-<p>Party Roles:
-  <% @party.characters.each do |r| %>
-    <%= r.party_role %>,
-  <% end %>
-</p>
-<p>Join Id: <%= @party.id %></p>
+<div class="container">
+  <h1><%=@party.name%></h1>
+  <p>Party Members:
+    <%@party.characters.each do |i| %>
+      <%= i.name %>,
+    <% end %>
+  </p>
+  <p>Party Roles:
+    <% @party.characters.each do |r| %>
+      <%= r.party_role %>,
+    <% end %>
+  </p>
+  <p>Join Id: <%= @party.id %></p>
 
-<%= button_to "Edit Party", {action:"edit", id: @party.id}, method: :get, class:'btn' %>
-  <br />
-<%= button_to "Delete Party", {action:"destroy", id: @party.id}, method: :delete, data: { confirm: "Is the adventure over?"}, class: 'btn' %>
+  <%= button_to "Edit Party", {action:"edit", id: @party.id}, method: :get, class:'btn' %>
+    <br />
+  <%= button_to "Delete Party", {action:"destroy", id: @party.id}, method: :delete, data: { confirm: "Is the adventure over?"}, class: 'btn' %>
+</div>

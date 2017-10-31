@@ -1,13 +1,15 @@
-<h1>Your Parties</h1>
-<hr>
+<div class="container">
+  <h1>Your Parties</h1>
+  <hr>
 
-  <% @parties.each do |c| %>
-    <% if (current_user.id === c.user_id) %>
-      <p>Party Name: <%= c.name %></p>
-      <% if c.party_members != nil %>
-        <p>Party Members: <%= c.party_members %></p>
-        <% end %>
-      <%=link_to "Party Details", party_path(c.id) %>
-  <% end %>
-    <hr>
-  <% end %>
+    <% @parties.each do |c| %>
+      <% if (current_user.id === c.user_id) %>
+        <p>Party Name: <%= c.name %></p>
+        <% if c.party_members != nil %>
+          <p>Party Members: <%= c.party_members %></p>
+          <% end %>
+        <%=link_to "Party Details", party_path(c.id) %>
+    <% end %>
+      <hr>
+    <% end %>
+</div>
