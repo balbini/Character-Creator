@@ -1,7 +1,5 @@
 <% content_for :top_content do %>
-  <!-- <div class="jumbotron"> -->
-    <div>
-      <div class="header-test">
+  <div class="header-test">
       <h1 class="app_title">Let The Adventure Begin</h1>
       <div class="homepage">
         <% if current_user === nil %>
@@ -12,27 +10,28 @@
           <span>
             <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary btn-lg red darken-2'%>
           </span>
-
         <% end %>
       </div>
       <% if current_user != nil %>
-      <div class="current-user-true">
-
+        <div class="current-user-true">
           <div class="carousel">
             <a class = "carousel-item" href="#one!">
-              <img class="homepage-image" src="http://media.wizards.com/2015/images/dnd/articles/UA_2015_04_06_3.png"></a>
+              <img class="homepage-image" src="http://media.wizards.com/2015/images/dnd/articles/UA_2015_04_06_3.png">
+            </a>
             <a class="carousel-item" href="#two!">
-            <img class="homepage-image" src="http://i.kinja-img.com/gawker-media/image/upload/s--JsJrN45u--/c_fit,fl_progressive,q_80,w_636/ktcyfcprhlcb3aigqbf0.png"></a>
+              <img class="homepage-image" src="http://i.kinja-img.com/gawker-media/image/upload/s--JsJrN45u--/c_fit,fl_progressive,q_80,w_636/ktcyfcprhlcb3aigqbf0.png">
+            </a>
             <a class="carousel-item" href="#three!">
-              <img class="homepage-image" src="http://dnd.wizards.com/sites/default/files/media/images/Frost-Giant-5E-full.png"></a>
+              <img class="homepage-image" src="http://dnd.wizards.com/sites/default/files/media/images/Frost-Giant-5E-full.png">
+            </a>
               <a class="carousel-item" href="#four">
-                <img class="homepage-image" src="https://i.pinimg.com/originals/6d/d1/e3/6dd1e34bbf39127c20ba257372d9b494.png"></a>
+                <img class="homepage-image" src="https://i.pinimg.com/originals/6d/d1/e3/6dd1e34bbf39127c20ba257372d9b494.png">
+              </a>
               <a class="carousel-item" href="#five">
-                <img class="homepage-image" src="https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png"></a>
-
+                <img class="homepage-image" src="https://media-waterdeep.cursecdn.com/avatars/thumbnails/7/639/420/618/636287075350739045.png">
+              </a>
           </div>
         </div>
-      <% end %>
-      </div>
-    </div>
+    <% end %>
+  </div>
 <% end %>

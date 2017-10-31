@@ -4,6 +4,6 @@
     <%= party.text_field :name, placeholder:'Fellowship of the Ring', maxlength: 50 %>
       <%= hidden_field(:party, :user_id, :value => current_user.id) %>
       <br>
-      <button type="submit" class="btn btn-large"><%='Begin Your Adventure' %></button>
+      <%= button_to'Begin Your Adventure', class:"btn" %>
   <% end %>
 </div>

@@ -1,45 +1,44 @@
 <div class="newCharacterPage container">
-<%= form_for @character do |c| %>
-  <div class="character_info">
-    <p>Character Name</p>
-    <%= c.text_field :name, placeholder:'Name', required: true, maxlength: 40 %>
-    <p>Character Age</p>
-    <%= c.number_field :age, placeholder:'Age', min: 15, required: true%>
-    <p>Character Level</p>
-    <%= c.number_field :level, min: 1, max: 20, placeholder: '1', required: true %>
-    <p>Character Description</p>
-    <%= c.text_area(:description, placeholder: 'Give your character a story', maxlength: 1000) %>
-    <p>Choose Your Character's Race</p>
-    <div class="input-field col s12">
-      <select name="character[subrace]"><% @player_subrace.each do |r| %>
-        <option><%= r %></option>
-      <% end %>
-    </select>
+  <%= form_for @character do |c| %>
+    <div class="character_info">
+      <p>Character Name</p>
+      <%= c.text_field :name, placeholder:'Name', required: true, maxlength: 40 %>
+      <p>Character Age</p>
+      <%= c.number_field :age, placeholder:'Age', min: 15, required: true%>
+      <p>Character Level</p>
+      <%= c.number_field :level, min: 1, max: 20, placeholder: '1', required: true %>
+      <p>Character Description</p>
+      <%= c.text_area(:description, placeholder: 'Give your character a story', maxlength: 1000) %>
+      <p>Choose Your Character's Race</p>
+      <div class="input-field col s12">
+        <select name="character[subrace]"><% @player_subrace.each do |r| %>
+          <option><%= r %></option>
+        <% end %>
+      </select>
+      </div>
+      <p>Choose a Class for Your Character</p>
+        <div class="input-field col s12">
+            <select name="character[class_name]">
+                <% @character_classes.each do |d| %>
+                 <option><%=d["name"]%></option>
+                <% end %>
+              </select>
+          </div>
+      <p>Choose an Alignment</p>
+      <div class="input-field col s12">
+        <select name="character[alignment]">
+          <% @alignment.each do |i| %>
+            <option><%=i%></option>
+          <% end %>
+        </select>
+      </div>
+        <br />
+      <p>Character Image</p>
+      <%= c.text_field :image, placeholder: "Insert a URL" %>
+      <%= hidden_field(:character, :user_id, :value => current_user.id) %>
+      <br>
+      <button type="submit" class="btn btn-large"><%='Save Character' %></button>
     </div>
 
-    <p>Choose a Class for Your Character</p>
-      <div class="input-field col s12">
-          <select name="character[class_name]">
-              <% @character_classes.each do |d| %>
-               <option><%=d["name"]%></option>
-              <% end %>
-            </select>
-        </div>
-    <p>Choose an Alignment</p>
-    <div class="input-field col s12">
-    <select name="character[alignment]">
-      <% @alignment.each do |i| %>
-        <option><%=i%></option>
-      <% end %>
-    </select>
-  </div>
-      <br />
-    <p>Character Image</p>
-    <%= c.text_field :image, placeholder: "Insert a URL" %>
-    <%= hidden_field(:character, :user_id, :value => current_user.id) %>
-    <br>
-    <button type="submit" class="btn btn-large"><%='Save Character' %></button>
-  </div>
-
-<% end %>
+  <% end %>
 </div>
