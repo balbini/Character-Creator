@@ -1,3 +1,5 @@
+
+
 class CharactersController < ApplicationController
   before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
@@ -8,7 +10,6 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
-    require "open-uri"
      @character_classes = open("http://www.dnd5eapi.co/api/classes").read
      @character_classes = JSON.parse(@character_classes)["results"]
      @player_class = open("http://www.dnd5eapi.co/api/classes/1").read
@@ -38,7 +39,7 @@ class CharactersController < ApplicationController
     @character = Character.find_by_id(params[:id])
     @barbarian_feature = open("http://www.dnd5eapi.co/api/features/1").read
     @chosen_barbarian = JSON.parse(@barbarian_feature)["desc"]
-    @chosen_barbarian = @chosen_barbarian.to_s
+    @chosen_barbarian = @chosen_barbarian
     @bard_feature = open("http://www.dnd5eapi.co/api/features/26").read
     @chosen_bard = JSON.parse(@bard_feature)["desc"]
     @cleric_feature = open("http://www.dnd5eapi.co/api/features/76").read
@@ -88,7 +89,7 @@ class CharactersController < ApplicationController
     if user_check
       @character = Character.find_by_id(params[:id])
       @character.destroy
-      redirect_to(root_path)
+      redirect_to(characters_path)
     else
       flash[:error] = "Cannot delete other characters"
       redirect_to root_path

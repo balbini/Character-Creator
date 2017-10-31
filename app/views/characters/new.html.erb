@@ -2,7 +2,7 @@
   <%= form_for @character do |c| %>
     <div class="character_info">
       <p>Character Name</p>
-      <%= c.text_field :name, placeholder:'Name', required: true, maxlength: 40 %>
+      <%= c.text_field :name, placeholder:'Name', required: true, maxlength: 30 %>
       <p>Character Age</p>
       <%= c.number_field :age, placeholder:'Age', min: 15, required: true%>
       <p>Character Level</p>

@@ -62,6 +62,7 @@
 
 h1, .allCharacters, .newCharacter {
   background: transparent;
+  font-family: 'Playfair Display SC', serif;
 }
 .character_info {
   text-align: left;
@@ -90,4 +91,13 @@ h1, .allCharacters, .newCharacter {
 }
 .carousel-item {
   min-height: 95%;
+}
+p, li, nav {
+  font-family: 'Playfair Display SC', serif;
+}
+.description {
+  overflow-wrap: break-word;
+}
+.card-title {
+  overflow-wrap: break-word;
 }

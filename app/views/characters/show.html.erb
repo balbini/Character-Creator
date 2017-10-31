@@ -1,10 +1,10 @@
 <div class="container">
   <% if (current_user.id == @character.user_id) %>
-      <p>Name: <%= @character.name %></p>
-      <p>Age: <%= @character.age %></p>
-      <p id="race">Race: <%= @character.subrace %></p>
-      <p>Level: <%= @character.level %></p>
-      <p>Proficiency Bonus:
+      <p><strong>Name:</strong> <%= @character.name %></p>
+      <p><strong>Age:</strong> <%= @character.age %></p>
+      <p id="race"></strong>Race:</strong> <%= @character.subrace %></p>
+      <p><strong>Level:</strong> <%= @character.level %></p>
+      <p><strong>Proficiency Bonus:</strong>
         <% if (@character.level <= 4) %>
           <%= "+2" %>
         <% elsif (@character.level >=5 && @character.level <= 8) %>
@@ -17,49 +17,50 @@
           <%= "+6"%>
         <% end %>
       </p>
-      <p>Experience: <%= @character.xp %></p>
-      <p>Class: <%= @character.class_name %></p>
+      <p><strong>Experience:</strong> <%= @character.xp %></p>
+      <p><strong>Class:</strong> <%= @character.class_name %></p>
       <!-- use erb to make it display better -->
         <% if @character.class_name === "Barbarian" %>
-          <p>Class Feature:<%= @chosen_barbarian.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_barbarian.join("") %></p>
         <% end %>
         <% if @character.class_name === "Cleric" %>
-          <p>Class Feature:<%= @chosen_cleric.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_cleric.join("") %></p>
         <% end %>
         <% if @character.class_name === "Bard" %>
-          <p>Class Feature:<%= @chosen_bard.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_bard.join("") %></p>
         <% end %>
         <% if @character.class_name === "Druid" %>
-          <p>Class Feature:<%= @chosen_druid.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_druid.join("") %></p>
         <% end %>
         <% if @character.class_name === "Fighter" %>
-          <p>Class Feature:<%= @chosen_fighter.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_fighter.join("") %></p>
         <% end %>
         <% if @character.class_name === "Monk" %>
-          <p>Class Feature:<%= @chosen_monk.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_monk.join("") %></p>
         <% end %>
         <% if @character.class_name === "Paladin" %>
-          <p>Class Feature:<%= @chosen_paladin.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_paladin.join("") %></p>
         <% end %>
         <% if @character.class_name === "Ranger" %>
-          <p>Class Feature:<%= @chosen_ranger.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_ranger.join("") %></p>
         <% end %>
         <% if @character.class_name === "Rogue" %>
-          <p>Class Feature:<%= @chosen_rouge.join("") %></p>
+          <p></strong>Class Feature: </strong><%= @chosen_rouge.join("") %></p>
         <% end %>
         <% if @character.class_name === "Sorcerer" %>
-          <p>Class Feature:<%= @chosen_sorcerer.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_sorcerer.join("") %></p>
         <% end %>
         <% if @character.class_name === "Warlock" %>
-          <p>Class Feature:<%= @chosen_warlock.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_warlock.join("") %></p>
         <% end %>
         <% if @character.class_name === "Wizard" %>
-          <p>Class Feature:<%= @chosen_wizard.join("") %></p>
+          <p><strong>Class Feature: </strong><%= @chosen_wizard.join("") %></p>
         <% end %>
-      <p>Alignment: <%= @character.alignment %></p>
-      <p>Character Story: <%= @character.description %></p>
+      <p><strong>Alignment:</strong> <%= @character.alignment %></p>
+      <p class="description"><strong>Character Story:</strong> <%= @character.description %></p>
       <img class="character-image" src="<%= @character.image %>" />
     <% end %>
+    <br />
     <%= link_to "Edit Character", {action:"edit", id: @character.id}, method: :get, class:"btn btn-large" %>
     <br />
     <br />
