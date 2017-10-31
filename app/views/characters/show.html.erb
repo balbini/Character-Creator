@@ -25,40 +25,40 @@
       <p>Class: <%= @character.class_name %></p>
       <!-- use erb to make it display better -->
         <% if @character.class_name === "Barbarian" %>
-          <p>Class Feature:<%= @chosen_barbarian.join(" ") %></p>
+          <p>Class Feature:<%= @chosen_barbarian.join("") %></p>
         <% end %>
         <% if @character.class_name === "Cleric" %>
-          <p>Class Feature:<%= @chosen_cleric %></p>
+          <p>Class Feature:<%= @chosen_cleric.join("") %></p>
         <% end %>
         <% if @character.class_name === "Bard" %>
-          <p>Class Feature:<%= @chosen_bard %></p>
+          <p>Class Feature:<%= @chosen_bard.join("") %></p>
         <% end %>
         <% if @character.class_name === "Druid" %>
-          <p>Class Feature:<%= @chosen_druid %></p>
+          <p>Class Feature:<%= @chosen_druid.join("") %></p>
         <% end %>
         <% if @character.class_name === "Fighter" %>
-          <p>Class Feature:<%= @chosen_fighter %></p>
+          <p>Class Feature:<%= @chosen_fighter.join("") %></p>
         <% end %>
         <% if @character.class_name === "Monk" %>
           <p>Class Feature:<%= @chosen_monk.join("") %></p>
         <% end %>
         <% if @character.class_name === "Paladin" %>
-          <p>Class Feature:<%= @chosen_paladin %></p>
+          <p>Class Feature:<%= @chosen_paladin.join("") %></p>
         <% end %>
         <% if @character.class_name === "Ranger" %>
-          <p>Class Feature:<%= @chosen_ranger %></p>
+          <p>Class Feature:<%= @chosen_ranger.join("") %></p>
         <% end %>
         <% if @character.class_name === "Rogue" %>
-          <p>Class Feature:<%= @chosen_rouge %></p>
+          <p>Class Feature:<%= @chosen_rouge.join("") %></p>
         <% end %>
         <% if @character.class_name === "Sorcerer" %>
-          <p>Class Feature:<%= @chosen_sorcerer %></p>
+          <p>Class Feature:<%= @chosen_sorcerer.join("") %></p>
         <% end %>
         <% if @character.class_name === "Warlock" %>
-          <p>Class Feature:<%= @chosen_warlock %></p>
+          <p>Class Feature:<%= @chosen_warlock.join("") %></p>
         <% end %>
         <% if @character.class_name === "Wizard" %>
-          <p>Class Feature:<%= @chosen_wizard %></p>
+          <p>Class Feature:<%= @chosen_wizard.join("") %></p>
         <% end %>
 
       <p>Alignment: <%= @character.alignment %></p>
@@ -68,7 +68,7 @@
 <%= link_to "Edit Character", {action:"edit", id: @character.id}, method: :get, class:"btn btn-large" %>
 <br />
 <br />
-<%= button_to "Delete Character", {action:"destroy", id: @character.id}, method: :delete, class:"btn btn-large", data: { confirm: "Is the adventure over?"} %>
+<%= link_to "Delete Character", {action:"destroy", id: @character.id}, method: :delete, class:"btn btn-large", data: { confirm: "Is the adventure over?"} %>
 
 
 </div>

@@ -1,18 +1,20 @@
 <div class="container">
   <%= form_for @character do |c| %>
     <div>
-      Name:<%= c.text_field :name %>
+      Name:<%= c.text_field :name, maxlength: 40, required: true %>
     </div>
     <div>
       Age:<%= c.number_field :age %>
     </div>
     <div>
-      Level:<%= c.number_field :level %>
+      Level:<%= c.number_field :level, min: 1, max: 20 %>
     </div>
     <div>
       Experience:<%= c.number_field :xp %>
     </div>
     <div>
+      Character Image:<%= c.text_field :image %>
+    </div>
       Description:<%=c.text_area :description %>
     </div>
     <div>
@@ -21,6 +23,6 @@
     <div>
       Party Id:<%= c.text_field :party_id%>
     </div>
-    <button class="btn btn-large"><%= button_to 'Save Changes', {action:"update", id:@character.id}, method: :put %></button>
+    <%= button_to 'Save Changes', {action:"update", id:@character.id}, method: :put, class:'btn btn-large' %>
   <% end %>
 </div>
