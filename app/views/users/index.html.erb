@@ -4,19 +4,20 @@
       <div class="header-test">
       <h1 class="app_title">Let The Adventure Begin</h1>
       <div class="homepage">
-      <% if current_user === nil %>
-      <p>Sign up to get started.</p>
-      <span>
-        <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg red darken-2' %>
-      </span>
-      <span>
-        <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary btn-lg red darken-2'%>
-      </span>
+        <% if current_user === nil %>
+          <p>Sign up to get started.</p>
+          <span>
+            <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg red darken-2' %>
+          </span>
+          <span>
+            <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary btn-lg red darken-2'%>
+          </span>
 
-      <% end %>
-    </div>
-      <div class="current-user-true">
+        <% end %>
+      </div>
       <% if current_user != nil %>
+      <div class="current-user-true">
+
           <div class="carousel">
             <a class = "carousel-item" href="#one!">
               <img class="homepage-image" src="http://media.wizards.com/2015/images/dnd/articles/UA_2015_04_06_3.png"></a>
