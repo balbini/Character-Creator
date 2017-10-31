@@ -22,8 +22,7 @@ class CharactersController < ApplicationController
      @all_skills = open("http://www.dnd5eapi.co/api/skills").read
      @player_skills = JSON.parse(@all_skills)["results"]
      @alignment = ["Lawful Good", "Choatic Good", "Neutral Good", "Neutral", "Choatic Neutral", "Neutral Evil", "Choatic Evil", "Lawful Evil"]
-     @barbarian_proficiencies = open("http://www.dnd5eapi.co/api/classes/1").read
-     @chosen_barbarian = JSON.parse(@barbarian_proficiencies)["proficiencies"]
+
   end
 
   def create
@@ -37,6 +36,31 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find_by_id(params[:id])
+    @barbarian_feature = open("http://www.dnd5eapi.co/api/features/1").read
+    @chosen_barbarian = JSON.parse(@barbarian_feature)["desc"]
+    @chosen_barbarian = @chosen_barbarian.to_s
+    @bard_feature = open("http://www.dnd5eapi.co/api/features/26").read
+    @chosen_bard = JSON.parse(@bard_feature)["desc"]
+    @cleric_feature = open("http://www.dnd5eapi.co/api/features/76").read
+    @chosen_cleric = JSON.parse(@cleric_feature)["desc"]
+    @druid_feature = open("http://www.dnd5eapi.co/api/features/103").read
+    @chosen_druid = JSON.parse(@druid_feature)["desc"]
+    @fighter_feature = open("http://www.dnd5eapi.co/api/features/139").read
+    @chosen_fighter = JSON.parse(@fighter_feature)["desc"]
+    @monk_feature = open("http://www.dnd5eapi.co/api/features/168").read
+    @chosen_monk = JSON.parse(@monk_feature)["desc"]
+    @paladin_feature = open("http://www.dnd5eapi.co/api/features/201").read
+    @chosen_paladin = JSON.parse(@paladin_feature)["desc"]
+    @ranger_feature = open("http://www.dnd5eapi.co/api/features/220").read
+    @chosen_ranger = JSON.parse(@ranger_feature)["desc"]
+    @rogue_feature = open("http://www.dnd5eapi.co/api/features/280").read
+    @chosen_rogue = JSON.parse(@rogue_feature)["desc"]
+    @sorcerer_feature = open("http://www.dnd5eapi.co/api/features/304").read
+    @chosen_sorcerer = JSON.parse(@sorcerer_feature)["desc"]
+    @warlock_feature = open("http://www.dnd5eapi.co/api/features/340").read
+    @chosen_warlock = JSON.parse(@warlock_feature)["desc"]
+    @wizard_feature = open("http://www.dnd5eapi.co/api/features/402").read
+    @chosen_wizard = JSON.parse(@wizard_feature)["desc"]
   end
 
   def edit

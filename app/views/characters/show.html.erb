@@ -23,13 +23,27 @@
 
       <p>Experience: <%= @character.xp %></p>
       <p>Class: <%= @character.class_name %></p>
+        <% if @character.class_name === "Barbarian" %>
+          <p>Class Feature:<%= @chosen_barbarian %></p>
+        <% end %>
+        <% if @character.class_name === "Cleric" %>
+          <p>Class Feature:<%= @chosen_cleric %></p>
+        <% end %>
+        <% if @character.class_name === "Bard" %>
+          <p>Class Feature:<%= @chosen_bard %></p>
+        <% end %>
+        <% if @character.class_name === "Druid" %>
+          <p>Class Feature:<%= @chosen_druid %></p>
+        <% end %>
+
       <p>Alignment: <%= @character.alignment %></p>
       <p>Character Story: <%= @character.description %></p>
       <img class="character-image" src="<%= @character.image %>" />
     <% end %>
-<%= button_to "Edit Character", {action:"edit", id: @character.id}, method: :get %>
+<%= link_to "Edit Character", {action:"edit", id: @character.id}, method: :get, class:"btn btn-large" %>
 <br />
-<%= button_to "Delete Character", {action:"destroy", id: @character.id}, method: :delete, data: { confirm: "Is the adventure over?"} %>
+<br />
+<%= button_to "Delete Character", {action:"destroy", id: @character.id}, method: :delete, class:"btn btn-large", data: { confirm: "Is the adventure over?"} %>
 
 
 </div>

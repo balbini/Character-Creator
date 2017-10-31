@@ -7,8 +7,6 @@
     <%= c.number_field :age, placeholder:'Age', min: 15, required: true%>
     <p>Character Level</p>
     <%= c.number_field :level, min: 1, max: 20, placeholder: '1', required: true %>
-    <p>Experience Points</p>
-    <%= c.number_field :xp, placeholder: '2500', min: 1, required: true%> setup auto values per level
     <p>Character Description</p>
     <%= c.text_area(:description, placeholder: 'Give your character a story', maxlength: 1000) %>
     <p>Choose Your Character's Race</p>
@@ -40,7 +38,7 @@
     <%= c.text_field :image, placeholder: "Insert a URL" %>
     <%= hidden_field(:character, :user_id, :value => current_user.id) %>
     <br>
-    <button type="submit"><%='Save Character' %></button>
+    <button type="submit" class="btn btn-large"><%='Save Character' %></button>
   </div>
 
 <% end %>
