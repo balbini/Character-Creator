@@ -1,6 +1,4 @@
-@import "bourbon";
-@import "base/base";
-@import "neat";
+
 @import 'materialize';
 @import "materialize/components/color";
 @import "materialize/extras/nouislider";
@@ -21,10 +19,16 @@
  //=require materialize-sprockets
  //= require materialize/extras/nouislider
 
- // body {
+ // html {
  //   background: url("https://steamuserimages-a.akamaihd.net/ugc/548683405726546870/9D361A9CE499D864C8699604143224FD87E4EFB9/");
+ //   background-size: 100%;
+ //   background-repeat: no-repeat;
  // }
-
+.header-test {
+  width: 100vw;
+  height: 100vh;
+  background: url("https://steamuserimages-a.akamaihd.net/ugc/548683405726546870/9D361A9CE499D864C8699604143224FD87E4EFB9/") no-repeat;
+}
  .home-page {
   display:inline-block;
    position: absolute;
@@ -32,6 +36,11 @@
    align: center;
    color: white;
  }
+ .app_title {
+   color: white;
+   text-align: center;
+   margin: 0 auto;
+}
  .container {
    text-align: center
  }
@@ -74,4 +83,9 @@ h1, .allCharacters, .newCharacter {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
+}
+.newCharacterPage {
+  width: 100vw;
+  margin: 0 auto;
+  background: url("http://paper-backgrounds.com/textureimages/2013/02/brown-concrete-wall-background-texture.jpg") no-repeat;
 }

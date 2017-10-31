@@ -2,6 +2,7 @@
   <!-- <div class="jumbotron"> -->
     <div>
       <div>
+        <div class="header-test">
       <!-- <img class="forest_background" src="https://steamuserimages-a.akamaihd.net/ugc/548683405726546870/9D361A9CE499D864C8699604143224FD87E4EFB9/"> -->
       <h1 class="app_title">Let The Adventure Begin</h1>
       <% if current_user === nil %>
@@ -10,7 +11,7 @@
         <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-primary btn-lg' %>
       </p>
       <% end %>
-      <div class="current-user-true">
+      <!-- <div class="current-user-true">
       <% if current_user != nil %>
         <div class="newCharacter">
           <%= link_to 'Create a New Character', new_character_path, class: 'newCharacter' %>
@@ -24,7 +25,8 @@
         <div class="allCharacters">
           <%= link_to 'All Characters',
           characters_path, class: 'allCharacters' %>
-      <% end %>
+      <% end %> -->
+      </div>
       </div>
     </div>
   </div>

@@ -12,41 +12,41 @@
 
   <body>
     <div class="navbar-fixed">
-    <nav>
-    <div class="nav-wrapper">
-        <p class="brand-logo"><%= link_to 'Adventurer', root_path, class: 'navbar-brand' %></p>
-        <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <% if user_signed_in? %>
-                <li><%= link_to 'Create Character', new_character_path%></li>
-                <li><%= link_to 'Create Party', new_party_path %></li>
-                <li><%= link_to 'My Characters', characters_path %></li>
-                <li><%= link_to 'My Parties', parties_path %></li>
-                <li><%= link_to 'Profile', edit_user_registration_path %></li>
-                <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </li>
-          <% else %>
-            <li><%= link_to 'Log In', new_user_session_path %></li>
-          <% end %>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><%= link_to 'Home', root_path%></li>
-          <% if user_signed_in? %>
-          <li><%= link_to 'Create Character', new_character_path%></li>
-          <li><%= link_to 'Create Party', new_party_path %></li>
-          <li><%= link_to 'My Characters', characters_path %></li>
-          <li><%= link_to 'My Parties', parties_path %></li>
-          <li><%= link_to 'Profile', edit_user_registration_path %></li>
-          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-          <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <% end %>
-        </ul>
+      <nav>
+      <div class="nav-wrapper">
+          <p class="brand-logo"><%= link_to 'Adventurer', root_path, class: 'navbar-brand' %></p>
+          <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <% if user_signed_in? %>
+                  <li><%= link_to 'Create Character', new_character_path%></li>
+                  <li><%= link_to 'Create Party', new_party_path %></li>
+                  <li><%= link_to 'My Characters', characters_path %></li>
+                  <li><%= link_to 'My Parties', parties_path %></li>
+                  <li><%= link_to 'Profile', edit_user_registration_path %></li>
+                  <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li><%= link_to 'Log In', new_user_session_path %></li>
+            <% end %>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+              <li><%= link_to 'Home', root_path%></li>
+              <% if user_signed_in? %>
+              <li><%= link_to 'Create Character', new_character_path%></li>
+              <li><%= link_to 'Create Party', new_party_path %></li>
+              <li><%= link_to 'My Characters', characters_path %></li>
+              <li><%= link_to 'My Parties', parties_path %></li>
+              <li><%= link_to 'Profile', edit_user_registration_path %></li>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+              <% else %>
+              <li><%= link_to 'Log In',   new_user_session_path %></li>
+              <li><%= link_to 'Sign Up',      new_user_registration_path %></li>
+              <% end %>
+            </ul>
+        </div>
+      </nav>
     </div>
-  </nav>
-</div>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%=key %>"
