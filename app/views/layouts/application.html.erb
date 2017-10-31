@@ -13,8 +13,8 @@
   <body>
     <div class="navbar-fixed">
       <nav>
-      <div class="nav-wrapper">
-          <p class="brand-logo"><%= link_to 'Adventurer', root_path, class: 'navbar-brand' %></p>
+        <div class="nav-wrapper">
+          <div class="brand-logo"><%= link_to 'Adventurer', root_path, class: 'navbar-brand' %></div>
           <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <% if user_signed_in? %>
