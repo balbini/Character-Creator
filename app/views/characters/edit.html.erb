@@ -1,5 +1,6 @@
 <div class="container">
   <%= form_for @character do |c| %>
+  <br />
     <div>
       Name:<%= c.text_field :name, maxlength: 40, required: true %>
     </div>
@@ -26,4 +27,6 @@
     </div>
     <%= button_to 'Save Changes', {action:"update", id:@character.id}, method: :put, class:'btn btn-large red darken-2' %>
   <% end %>
+  <br />
+  <br />
 </div>
