@@ -101,10 +101,3 @@ p, li, nav, h2 {
 .card-title {
   overflow-wrap: break-word;
 }
-.cards-container {
-  column-break-inside: avoid;
-  .card {
-    display: inline-block;
-    overflow: visible;
-  }
-}
