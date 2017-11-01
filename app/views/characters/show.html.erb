@@ -61,8 +61,8 @@
       <img class="character-image" src="<%= @character.image %>" />
     <% end %>
     <br />
-    <%= link_to "Edit Character", {action:"edit", id: @character.id}, method: :get, class:"btn btn-large" %>
+    <%= link_to "Edit Character", {action:"edit", id: @character.id}, method: :get, class:"btn btn-large red darken-2" %>
     <br />
     <br />
-    <%= link_to "Delete Character", {action:"destroy", id: @character.id}, method: :delete, class:"btn btn-large", data: { confirm: "Is the adventure over?"} %>
+    <%= link_to "Delete Character", {action:"destroy", id: @character.id}, method: :delete, class:"btn btn-large red darken-2", data: { confirm: "Is the adventure over?"} %>
 </div>

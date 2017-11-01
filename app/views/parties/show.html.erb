@@ -14,7 +14,7 @@
   <p>Join Id: <%= @party.id %></p>
   <p><strong>Give this Join Id to the players in your party, they will need to enter it in on their character edit page</strong></p>
 
-  <%= button_to "Edit Party", {action:"edit", id: @party.id}, method: :get, class:'btn' %>
+  <%= button_to "Edit Party", {action:"edit", id: @party.id}, method: :get, class:'btn red darken-2' %>
     <br />
-  <%= button_to "Delete Party", {action:"destroy", id: @party.id}, method: :delete, data: { confirm: "Is the adventure over?"}, class: 'btn' %>
+  <%= button_to "Delete Party", {action:"destroy", id: @party.id}, method: :delete, data: { confirm: "Is the adventure over?"}, class: 'btn red darken-2' %>
 </div>

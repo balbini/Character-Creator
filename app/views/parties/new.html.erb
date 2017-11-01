@@ -1,9 +1,9 @@
-<div class="container party_form">
+<div class="container">
   <%= form_for @party do |party| %>
     <p> Party Name </p>
     <%= party.text_field :name, placeholder:'Fellowship of the Ring', maxlength: 50 %>
       <%= hidden_field(:party, :user_id, :value => current_user.id) %>
       <br>
-      <%= button_to'Begin Your Adventure', class:"btn btn-lrg" %>
+      <%= button_to 'Begin Your Adventure', nil, :class => 'btn btn-large red darken-2' %>
   <% end %>
 </div>
