@@ -24,4 +24,10 @@ $(document).ready(function(){
 
   $('.carousel.carousel-slider').carousel();
 
+  $('.grid').masonry({
+    columnWidth: '.grid-item',
+    itemSelector: '.grid-item',
+    percentPosition: true
+  });
+
 })

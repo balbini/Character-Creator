@@ -1,16 +1,16 @@
 # Paladin
 
-* https://salty-everglades-69252.herokuapp.com/
+https://salty-everglades-69252.herokuapp.com/
 
 This app is designed for players of the tabletop role-playing game, Dungeons and Dragons, to create and maintain characters and groups used in their games.
 
-* Technologies Used
+* Technologies Used:
   This app was made with Ruby on Rails in the backend. It's front-end is embedded Ruby along with a small amount of javascript. I also used the CSS framework Materialize to style the app.
 
-* Installation Steps
+* Installation Steps:
   Ensure that you have ruby and ruby on rails installed on your computer. When you open the app, ensure to run bundle install as well, to confirm all gems are installed. This is all you should need to do to have the app up and running.
 
-* Wireframe Link: 
+* Wireframe Link:
   https://balsamiq.cloud/sotpy/p9b0
 
 * User Stories Link:

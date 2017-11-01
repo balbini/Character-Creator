@@ -1,12 +1,14 @@
 <div class="all-character-show">
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <div class="container">
     <h1 class="character-show">Your Characters</h1>
     <div class="row">
       <hr>
+      <div class="grid">
       <% @characters.each do |c| %>
         <% if (current_user.id === c.user_id) %>
           <div class="col s12 m6 l6 cards-container">
-            <div class="card">
+            <div class="card grid-item">
                 <div class="card-image">
                   <img src="<%= c.image %>">
                 </div>
@@ -24,6 +26,7 @@
           </div>
         <% end %>
       <% end %>
+    </div>
     </div>
   </div>
 </div>
