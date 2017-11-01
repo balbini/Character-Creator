@@ -31,8 +31,8 @@ class PartiesController < ApplicationController
     def update
       if user_check
         @party = Party.find_by_id(params[:id])
-        @party.update(character_params)
-        redirect_to character_path
+        @party.update(party_params)
+        redirect_to parties_path
       else
         flash[:error] = "Cannot edit other characters"
         redirect_back(fallback_location: root_path)
@@ -43,7 +43,7 @@ class PartiesController < ApplicationController
       if user_check
         @party = Party.find_by_id(params[:id])
         @party.destroy
-        redirect_to(root_path)
+        redirect_to(parties_path)
       else
         flash[:error] = "Cannot delete other characters"
         redirect_to root_path
