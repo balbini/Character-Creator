@@ -57,6 +57,12 @@
           <p><strong>Class Feature: </strong><%= @chosen_wizard.join("") %></p>
         <% end %>
       <p><strong>Alignment:</strong> <%= @character.alignment %></p>
+      <p><strong>Strength:</strong> <%= @character.strength %></p>
+      <p><strong>Dexterity:</strong> <%= @character.dexterity %>,</p>
+      <p><strong>Constitution:</strong> <%= @character.constitution %>,</p>
+      <p><strong>Intelligence:</strong> <%= @character.intelligence %>,</p>
+      <p><strong>Wisdom:</strong> <%= @character.wisdom %>,</p>
+      <p><strong>Charisma:</strong> <%= @character.charisma %></p>
       <p class="description"><strong>Character Story:</strong> <%= @character.description %></p>
       <img class="character-image" src="<%= @character.image %>" />
     <% end %>

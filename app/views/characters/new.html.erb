@@ -32,7 +32,32 @@
           <% end %>
         </select>
       </div>
-        <br />
+      <br />
+      <p>Strength Score</p>
+      <div class="input-field col s12">
+        <%= c.number_field :strength, min: 3, max: 24, placeholder: '15' %>
+      </div>
+      <p>Dexterity Score</p>
+      <div class="input-field col s12">
+        <%= c.number_field :dexterity, min: 3, max: 24, placeholder: '16' %>
+      </div>
+      <p>Constitution Score</p>
+      <div class="input-field col s12">
+        <%= c.number_field :constitution, min: 3, max: 24, placeholder: '12' %>
+      </div>
+      <p>Intelligence Score</p>
+      <div class="input-field col s12">
+        <%= c.number_field :intelligence, min: 3, max: 24, placeholder: '13' %>
+      </div>
+      <p>Wisdom Score</p>
+      <div class="input-field col s12">
+        <%= c.number_field :wisdom, min: 3, max: 24, placeholder: '17' %>
+      </div>
+      <p>Charisma Score</p>
+      <div class="input-field col s12">
+        <%= c.number_field :charisma, min: 3, max: 24, placeholder: '8' %>
+      </div>
+      <br />
       <p>Character Image</p>
       <%= c.text_field :image, placeholder: "Insert a URL" %>
       <%= hidden_field(:character, :user_id, :value => current_user.id) %>
