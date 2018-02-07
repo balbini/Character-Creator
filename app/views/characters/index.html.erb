@@ -1,0 +1,32 @@
+<div class="all-character-show">
+ -  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+ -  <div class="container">
+ -    <h1 class="character-show">Your Characters</h1>
+ -    <div class="row">
+ -      <hr>
+ -      <div class="grid">
+ -      <% @characters.each do |c| %>
+ -        <% if (current_user.id === c.user_id) %>
+ -          <div class="col s12 m6 l6 cards-container">
+ -            <div class="card grid-item">
+ -                <div class="card-image">
+ -                  <img src="<%= c.image %>">
+ -                </div>
+ -                <div class="card-content">
+ -                  <span class="card-title"><%= c.name %></span>
+ -                  <p>Age: <%= c.age %></p>
+ -                  <p>Level: <%= c.level %></p>
+ -                  <p>Experience: <%= c.xp %></p>
+ -                  <p>Class: <%= c.class_name %></p>
+ -                </div>
+ -                <div class="card-action">
+ -                <%=link_to "Character Details", character_path(c.id) %>
+ -              </div>
+ -            </div>
+ -          </div>
+ -        <% end %>
+ -      <% end %>
+ -    </div>
+ -    </div>
+ -  </div>
+ -</div>
