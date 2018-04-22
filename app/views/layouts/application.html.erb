@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Paladin</title>
+    <title>Stretch Fitness & Wells</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" href="https://cdn.sstatic.net/Sites/rpg/img/apple-touch-icon@2.png?v=4c03147b9ffe">
+    <!-- <link rel="icon" href="https://cdn.sstatic.net/Sites/rpg/img/apple-touch-icon@2.png?v=4c03147b9ffe"> -->
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC" rel="stylesheet">
 
 
@@ -19,14 +19,16 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper grey darken-4">
-          <div class="brand-logo"><%= link_to 'Paladin', root_path, class: 'navbar-brand' %></div>
+          <div class="brand-logo"><%= link_to 'Stretch', root_path, class: 'navbar-brand' %></div>
           <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <% if user_signed_in? %>
-                  <li><%= link_to 'Create Character', new_character_path%></li>
-                  <li><%= link_to 'Create Party', new_party_path %></li>
-                  <li><%= link_to 'My Characters', characters_path %></li>
-                  <li><%= link_to 'My Parties', parties_path %></li>
+                  <!-- <li><%= link_to 'Create Character', new_character_path%></li> -->
+                  <li><%= link_to 'Create Group', new_party_path %></li>
+                    <% if (current_user.id) %>
+                      <li><%= link_to 'My Profile', characters_path %></li>
+                    <% end %>
+                  <li><%= link_to 'My Groups', parties_path %></li>
                   <li><%= link_to 'Profile', edit_user_registration_path %></li>
                   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
                 </ul>
@@ -38,10 +40,10 @@
           <ul class="side-nav" id="mobile-demo">
               <li><%= link_to 'Home', root_path%></li>
               <% if user_signed_in? %>
-                <li><%= link_to 'Create Character', new_character_path%></li>
+                <!-- <li><%= link_to 'Create Character', new_character_path%></li> -->
                 <li><%= link_to 'Create Party', new_party_path %></li>
-                <li><%= link_to 'My Characters', characters_path %></li>
-                <li><%= link_to 'My Parties', parties_path %></li>
+                <li><%= link_to 'My Profile', characters_path %></li>
+                <li><%= link_to 'My Groups', parties_path %></li>
                 <li><%= link_to 'Profile', edit_user_registration_path %></li>
                 <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
               <% else %>
@@ -53,13 +55,7 @@
       </nav>
     </div>
 
-    <!-- <div class="container">
-      <% flash.each do |key, value| %>
-        <div class="alert alert-<%=key %>"
-          <%= value %>
-        </div>
-      <% end %>
-    </div> -->
+
 
     <%= yield :top_content %>
 

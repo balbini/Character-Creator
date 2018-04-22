@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 20171030201836) do
     t.integer "dexterity"
     t.integer "constitution"
     t.integer "intelligence"
-    t.integer "wisdom"
+    t.string "wisdom"
     t.integer "charisma"
     t.string "languages"
     t.string "subrace"
